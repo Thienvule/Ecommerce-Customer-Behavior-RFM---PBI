@@ -77,11 +77,11 @@ Develop an Interactive Dashboard to visualize RFM segments alongside sales data,
 ### Overview of findings
 Sales Trend Analysis
 ![image](https://github.com/user-attachments/assets/aa6ba055-b30d-4cad-8fac-85039188f875)
-- This tab can help stakeholders understand what is going on with the Northstar metrics and relevant metrics using different dimensions, immediately granting insights of the how different customer segments or product categories are performing.
+This tab can help stakeholders understand what is going on with the Northstar metrics and relevant metrics using different dimensions, immediately granting insights of the how different customer segments or product categories are performing.
 Map Sales
 ![image](https://github.com/user-attachments/assets/57faece2-02f9-4038-bc8d-e228d8bc67dc)
 
-- This sheet can help stakeholders know how different territories are doing.
+This sheet can help stakeholders know how different territories are doing.
 
 
 #### Symptom
