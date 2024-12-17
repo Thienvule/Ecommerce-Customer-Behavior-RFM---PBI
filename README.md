@@ -10,11 +10,11 @@ Determined to uncover the truth behind this paradox, I initiated an analysis to 
 
 ### Insights and recommendations are provided on the following key areas:
 - Design Thinking Process: Implement a comprehensive Design Thinking approach that begins with empathetic engagement with stakeholders to understand their needs and perspectives. Clearly define the core problem, brainstorm innovative solutions, and ultimately develop an interactive dashboard that effectively highlights critical insights and actionable items for stakeholders.
-- Sales Trend Analysis: Conduct an in-depth evaluation of historical sales trends, focusing on key performance metrics including total sales volume, total number of orders, and average order value (AOV). This analysis should aim to identify patterns, anomalies, and opportunities for growth based on historical data.
-- RFM Analysis: Employ RFM (Recency, Frequency, Monetary) segmentation to gain deeper insights into customer behaviors. This approach will enable the formulation of targeted strategies to prioritize high-value customer segments while developing plans to engage and convert lower-value segments. Additionally, this analysis will address the paradox of increased customer acquisition alongside stagnant sales figures.
-- Product Level Performance: Execute a detailed analysis of Adventure Work's diverse product lines to assess their individual contributions to overall sales performance. This examination will help identify which products resonate most with specific customer segments, facilitating better-targeted marketing and inventory decisions.
+- Sales Trend Analysis: Conduct an in-depth evaluation of historical sales trends, focusing on key performance metrics including total sales volume, total number of orders, and average order value (AOV). This analysis should aim to identify patterns, anomalies - potential symptoms, and opportunities for growth based on historical data.
+- Segment Analysis: Employ RFM (Recency, Frequency, Monetary) segmentation to gain deeper insights into customer behaviors. This approach will enable the formulation of targeted strategies to prioritize high-value customer segments while developing plans to engage and convert lower-value segments. Additionally, this analysis will address the paradox of increased customer acquisition alongside stagnant sales figures.
+- Product Analysis: Execute a detailed analysis of Adventure Work's diverse product lines to assess their individual contributions to overall sales performance. This examination will help identify which products resonate most with specific customer segments, facilitating better-targeted marketing and inventory decisions.
 
-Note: To ensure clarity and prevent information overload, the technical details of the project will be provided in the final section of this README file.
+Note: To ensure clarity and prevent information overload, the technical details including tools and data structures of the project will be provided in the final section of this README file.
 
 ## Design Thinking Process
 
