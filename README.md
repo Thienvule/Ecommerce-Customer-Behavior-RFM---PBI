@@ -75,17 +75,18 @@ Develop an Interactive Dashboard to visualize RFM segments alongside sales data,
 
 ### Interactive Dashboard and Pre-Insights
 #### Overview
-Sales Overview
+Sales Trend Analysis
 ![image](https://github.com/user-attachments/assets/aa6ba055-b30d-4cad-8fac-85039188f875)
 - This tab can help stakeholders understand what is going on with the Northstar metrics and relevant metrics using different dimensions, immediately granting insights of the how different customer segments or product categories are performing.
 Map Sales
 ![image](https://github.com/user-attachments/assets/57faece2-02f9-4038-bc8d-e228d8bc67dc)
 
-- This table can help stakeholders know how different territories are doing
+- This sheet can help stakeholders know how different territories are doing.
 
 Symptom Overview
-My first insights are covered here, serving  as a headstart for further discussion and investigation. Also, to prepare the story facilitating my coming views
-  ![image](https://github.com/user-attachments/assets/943de9ba-191c-478e-a385-ec1072db5ccc)
+My first insights are covered here, serving  as a headstart for further discussion and investigation. 
+
+![image](https://github.com/user-attachments/assets/943de9ba-191c-478e-a385-ec1072db5ccc)
 
 #### YOY Analysis 
 These 3 tabs allow stakeholders to dive deeper to the metrics, signaling issues in AOV.
