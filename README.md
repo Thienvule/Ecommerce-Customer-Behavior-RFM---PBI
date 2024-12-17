@@ -297,5 +297,6 @@ SWITCH(
   - A monetary value less than or equal to the 20th percentile will receive a score of 1 (lowest spend).
   - The score increases to 5 for customers in the highest monetary percentile (highest spend).
 Meaning: The M Score ranks customers based on the total amount of money they have spent, with a lower score indicating lower spending and a higher score indicating that the customer is a significant contributor to revenue.
-- A table of Segment Score would be used to segment the customers after granting them scores. View it [here](url)
+- A table of Segment Score would be used to segment the customers after granting them scores. ([View Here](https://docs.google.com/spreadsheets/d/1TRsMIuSPd2Dcx_N3dCAYWvxq3g_fNu9ND5z18cWUDt8/edit?gid=288914035#gid=288914035))
+
 This step allows us to conduct segmenting customers with ease.
