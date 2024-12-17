@@ -139,9 +139,23 @@ After utilizing this interactive dashboard, stakeholders will gain insights into
 - Load: Load the clean data into Power BI for analysis.
 
 ### Crafting Table Relationship and Data Models
+![image](https://github.com/user-attachments/assets/0a937b83-1330-4da7-b199-a0c2032e3b4d)
+
+In this projects, I will utilize data from these sets of the database on BigQuery:
+Person: This dataset contains crucial information about customers that is essential for the segmentation process.
+
+![image](https://github.com/user-attachments/assets/9d93b342-f236-42fa-94f6-13f54beb4733)
+
+Production: This dataset offers valuable insights into the products, supporting our initial analysis of product performance.
+![image](https://github.com/user-attachments/assets/3bee82c5-3684-43da-9b6d-17b3f92aa991)
+
+Sales: This dataset is highly relevant, as it allows us to analyze sales trends alongside customer performance.
+![image](https://github.com/user-attachments/assets/bac6a325-6ff9-4aaf-b7db-7b5ef6102f80)
+
+
 ![image](https://github.com/user-attachments/assets/4cd81c71-cc1a-4736-b2c7-f268643d35b3)
 
-- Create Relationships: Establish relationships between different tables (e.g., Sales, Customers, Products) to enable comprehensive analysis. In this stage, the table corresponding to the insights generated during the Ideate phase of the "Story phase" will be selected.
+- Create Relationships: Establish relationships between different tables to enable comprehensive analysis. In this stage, the tables corresponding to the insights generated during the Ideate phase will be selected, in which the fact table should be the SalesTable table.
 - Snowflake Schema: Given the complexity of this dataset, where dimensions contain their own relevant sub-dimensions, we cannot link the Subcategory table directly to the Sales fact table to explore product subcategories in depth. For example:
   ![image](https://github.com/user-attachments/assets/a7ef8b00-b61c-4357-af58-2c46e7c1aa3d)
 ### Other Prepartions
