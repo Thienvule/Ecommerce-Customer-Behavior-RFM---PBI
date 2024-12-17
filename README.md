@@ -14,9 +14,7 @@ Determined to uncover the truth behind this paradox, I initiated an analysis to 
 - RFM Analysis: Employ RFM (Recency, Frequency, Monetary) segmentation to gain deeper insights into customer behaviors. This approach will enable the formulation of targeted strategies to prioritize high-value customer segments while developing plans to engage and convert lower-value segments. Additionally, this analysis will address the paradox of increased customer acquisition alongside stagnant sales figures.
 - Product Level Performance: Execute a detailed analysis of Adventure Work's diverse product lines to assess their individual contributions to overall sales performance. This examination will help identify which products resonate most with specific customer segments, facilitating better-targeted marketing and inventory decisions.
 
-Note: The technical part of the project will be comprised in another file called: "For technical read"
-
-
+Note: To ensure clarity and prevent information overload, the technical details of the project will be provided in the final section of this README file.
 
 ## Design Thinking Process
 
@@ -72,6 +70,66 @@ Develop a customer-centric approach to uncover the underlying reasons for stagna
 - Examine product performance to determine the most effective strategies for engaging each segment.
 ### Stage 4: Prototype
 Develop an Interactive Dashboard to visualize RFM segments alongside sales data, helping stakeholders explore customer contributions to sales. Refine it based on user feedback for clarity and impact.
+
+
+
+### Interactive Dashboard and Pre-Insights
+#### Overview
+Sales Overview
+![image](https://github.com/user-attachments/assets/aa6ba055-b30d-4cad-8fac-85039188f875)
+- This tab can help stakeholders understand what is going on with the Northstar metrics and relevant metrics using different dimensions, immediately granting insights of the how different customer segments or product categories are performing.
+Map Sales
+![image](https://github.com/user-attachments/assets/57faece2-02f9-4038-bc8d-e228d8bc67dc)
+
+- This table can help stakeholders know how different territories are doing
+
+Symptom Overview
+My first insights are covered here, serving  as a headstart for further discussion and investigation. Also, to prepare the story facilitating my coming views
+  ![image](https://github.com/user-attachments/assets/943de9ba-191c-478e-a385-ec1072db5ccc)
+
+#### YOY Analysis 
+These 3 tabs allow stakeholders to dive deeper to the metrics, signaling issues in AOV.
+YOY_Sales
+![image](https://github.com/user-attachments/assets/0e698113-4948-48dd-a509-3b96dea5be5b)
+
+YOY_Order
+![image](https://github.com/user-attachments/assets/dbf3f77c-fe37-4031-8ef0-c103c958f2d8)
+
+YOY AOV
+![image](https://github.com/user-attachments/assets/006672bd-e0e1-487a-a640-b85b4136d386)
+
+YOY Insights
+![image](https://github.com/user-attachments/assets/870605f2-5019-43b6-844c-43b2947082d9)
+
+#### Segment Analysis
+Map_Segment: Allow stakeholders to intepret where our customers are and what is happening to them
+![image](https://github.com/user-attachments/assets/c9309f5b-acd7-4865-bb41-faadb8c9cfd6)
+
+Existing vs New
+This tab reveals why sales is not reflected by the surge in customers.
+![image](https://github.com/user-attachments/assets/bc4faf42-df66-4d78-b1f7-1408465f2b81)
+
+Segment Detail
+This tab helps stakeholders to analyze segments in a much deeper granularity to decide the coming approaches to each critical segments.
+![image](https://github.com/user-attachments/assets/516f46d4-b64c-4179-8ace-f1f667762bb7)
+
+Segment Insights
+My insights summary regarding segments
+![image](https://github.com/user-attachments/assets/eeec3aa5-6318-4f87-beb2-7014e405d642)
+
+#### Product Analysis
+Product Details: This helps to understand why each type of customer buy our product, leading to better product improvements.
+![image](https://github.com/user-attachments/assets/73874738-5d0e-4eca-a57c-3e128299f1bd)
+
+Product Insights
+My insights summary regarding how to approach products improvement
+![image](https://github.com/user-attachments/assets/7e4bc7b7-c628-4d70-a47d-250b64b978b1)
+
+#### Recommendation Summary
+This tab includes my recommended next steps to be conducted, serving as the foundation for further investigation and decision making.
+![image](https://github.com/user-attachments/assets/46bc91e6-b1e8-47a9-99b7-615dd140b545)
+
+After utilizing this interactive dashboard, stakeholders will gain insights into why the surge in customers isn’t reflected in sales, allowing them to adjust their current approach and achieve better results.
 
 ## Technical preparation
 ### Data Preparation with Power Query (ETL)
@@ -176,61 +234,3 @@ SWITCH(
 Meaning: The M Score ranks customers based on the total amount of money they have spent, with a lower score indicating lower spending and a higher score indicating that the customer is a significant contributor to revenue.
 - A table of Segment Score would be used to segment the customers after granting them scores. View it [here](url)
 This step allows us to conduct segmenting customers with ease.
-
-### Interactive Dashboard and Pre-Insights
-#### Overview
-Sales Overview
-![image](https://github.com/user-attachments/assets/aa6ba055-b30d-4cad-8fac-85039188f875)
-- This tab can help stakeholders understand what is going on with the Northstar metrics and relevant metrics using different dimensions, immediately granting insights of the how different customer segments or product categories are performing.
-Map Sales
-![image](https://github.com/user-attachments/assets/57faece2-02f9-4038-bc8d-e228d8bc67dc)
-
-- This table can help stakeholders know how different territories are doing
-
-Symptom Overview
-My first insights are covered here, serving  as a headstart for further discussion and investigation. Also, to prepare the story facilitating my coming views
-  ![image](https://github.com/user-attachments/assets/943de9ba-191c-478e-a385-ec1072db5ccc)
-
-#### YOY Analysis 
-These 3 tabs allow stakeholders to dive deeper to the metrics, signaling issues in AOV.
-YOY_Sales
-![image](https://github.com/user-attachments/assets/0e698113-4948-48dd-a509-3b96dea5be5b)
-
-YOY_Order
-![image](https://github.com/user-attachments/assets/dbf3f77c-fe37-4031-8ef0-c103c958f2d8)
-
-YOY AOV
-![image](https://github.com/user-attachments/assets/006672bd-e0e1-487a-a640-b85b4136d386)
-
-YOY Insights
-![image](https://github.com/user-attachments/assets/870605f2-5019-43b6-844c-43b2947082d9)
-
-#### Segment Analysis
-Map_Segment: Allow stakeholders to intepret where our customers are and what is happening to them
-![image](https://github.com/user-attachments/assets/c9309f5b-acd7-4865-bb41-faadb8c9cfd6)
-
-Existing vs New
-This tab reveals why sales is not reflected by the surge in customers.
-![image](https://github.com/user-attachments/assets/bc4faf42-df66-4d78-b1f7-1408465f2b81)
-
-Segment Detail
-This tab helps stakeholders to analyze segments in a much deeper granularity to decide the coming approaches to each critical segments.
-![image](https://github.com/user-attachments/assets/516f46d4-b64c-4179-8ace-f1f667762bb7)
-
-Segment Insights
-My insights summary regarding segments
-![image](https://github.com/user-attachments/assets/eeec3aa5-6318-4f87-beb2-7014e405d642)
-
-#### Product Analysis
-Product Details: This helps to understand why each type of customer buy our product, leading to better product improvements.
-![image](https://github.com/user-attachments/assets/73874738-5d0e-4eca-a57c-3e128299f1bd)
-
-Product Insights
-My insights summary regarding how to approach products improvement
-![image](https://github.com/user-attachments/assets/7e4bc7b7-c628-4d70-a47d-250b64b978b1)
-
-#### Recommendation Summary
-This tab includes my recommended next steps to be conducted, serving as the foundation for further investigation and decision making.
-![image](https://github.com/user-attachments/assets/46bc91e6-b1e8-47a9-99b7-615dd140b545)
-
-After utilizing this interactive dashboard, stakeholders will gain insights into why the surge in customers isn’t reflected in sales, allowing them to adjust their current approach and achieve better results.
