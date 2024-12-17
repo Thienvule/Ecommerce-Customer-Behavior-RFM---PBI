@@ -208,7 +208,7 @@ Sales: This dataset is highly relevant, as it allows us to analyze sales trends 
 - Create Relationships: Establish relationships between different tables to enable comprehensive analysis. In this stage, the tables corresponding to the insights generated during the Ideate phase will be selected, in which the fact table should be the SalesTable table.
 - Snowflake Schema: Given the complexity of this dataset, where dimensions contain their own relevant sub-dimensions, we cannot link the Subcategory table directly to the Sales fact table to explore product subcategories in depth. For example:
   ![image](https://github.com/user-attachments/assets/a7ef8b00-b61c-4357-af58-2c46e7c1aa3d)
-### Other Prepartions
+
 ### Calendar table
 A Calendar table is essential for conducting time series analysis. In this scenario, I would create the table using DAX with the following formula:
 Calendar = CALENDAR(MIN(SalesTable[OrderDate]), MAX(SalesTable[OrderDate]))
