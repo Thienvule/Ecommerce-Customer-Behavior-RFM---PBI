@@ -1,0 +1,104 @@
+# For a Technical Read
+## Technical preparation
+### Data Preparation with Power Query (ETL)
+- Extract: Import data from various sources, such as sales records, customer databases, and product data. 
+- Transform: Clean and preprocess the data by removing duplicates, handling missing values, and applying necessary transformations to ensure data accuracy. 
+- Load: Load the clean data into Power BI for analysis.
+
+### Crafting Table Relationship and Data Models
+![image](https://github.com/user-attachments/assets/4cd81c71-cc1a-4736-b2c7-f268643d35b3)
+
+- Create Relationships: Establish relationships between different tables (e.g., Sales, Customers, Products) to enable comprehensive analysis. In this stage, the table corresponding to the insights generated during the Ideate phase of the "Story phase" will be selected.
+- Snowflake Schema: Given the complexity of this dataset, where dimensions contain their own relevant sub-dimensions, we cannot link the Subcategory table directly to the Sales fact table to explore product subcategories in depth. For example:
+  ![image](https://github.com/user-attachments/assets/a7ef8b00-b61c-4357-af58-2c46e7c1aa3d)
+### Other Prepartions
+### Calendar table
+A Calendar table is essential for conducting time series analysis. In this scenario, I would create the table using DAX with the following formula:
+Calendar = CALENDAR(MIN(SalesTable[OrderDate]), MAX(SalesTable[OrderDate]))
+This Calendar table is generated based on the OrderDate from the SalesTable. In addition, other columns such as Year, Week, Start of year, etc. are also added to prepare for a deeper granularity of the Date dimension. 
+
+![image](https://github.com/user-attachments/assets/c7032af2-4df4-49fe-a364-a5284cbaba3b)
+
+Lastly, I group all Date-related aspects to form a hierarchy of Date, including Year, Quarter, Month, and Day.
+
+![image](https://github.com/user-attachments/assets/37b2c579-2297-48f4-83c1-8e0c056ee2a7)
+
+### DAX and Measures
+To generate actionable insights from dimensions, advanced DAX calculations must be created and stored in a Measure table for relevant business metrics, such as
+- Average Order Value (AOV): AOV = DIVIDE([Total Sales],[Number of Orders])
+- Customer Lifetime Value (CLV): AVG CLV = 
+  VAR CustomerLifetime = DATEDIFF(MIN(SalesTable[OrderDate]), MAX(SalesTable[OrderDate]), YEAR)
+  VAR TotalRevenue = SUM(SalesTable[LineTotal])
+  VAR AveragePurchaseAmount = DIVIDE([Total Sales], COUNT(SalesTable[SalesOrderID]))
+  RETURN AveragePurchaseAmount * CustomerLifetime
+- Total Customer: Total Customer = DISTINCTCOUNT(Customerinfo[CustomerID])
+- Total Customer prior year: Total Customer Prior Year = CALCULATE([Total Customer], SAMEPERIODLASTYEAR('Calendar'[Date].[Date]))
+- Total Sales: Total Sales = CALCULATE(SUM(SalesTable[LineTotal]))
+- Sales Prior Year (For YOY): Salesprioryear = CALCULATE([Total Sales],SAMEPERIODLASTYEAR('Calendar'[Date]))
+- YOY calculations of some of the above measures.
+  - AOV YoY% = DIVIDE(([AOV] - [AOV last year]), [AOV last year])
+  - Total Order YoY% = DIVIDE(([Total Order] - [Total Order prioryear]), [Total Order prioryear])
+  - SalesYoY = DIVIDE([Total Sales]-[Salesprioryear],[Salesprioryear])
+Storing these DAXs in a new table called Measures allow easier later access.
+
+### Preparation relating to customers
+Existing and New customer condition - This needs to be done as the question revolves around the performance of customers, specifically the existing and the new customers. To facilitate this, I create a column called "Customer Fresh" to better mark them.
+
+Customer Fresh = IF(CALCULATE(DISTINCTCOUNT(SalesTable[SalesOrderID]), ALLEXCEPT(SalesTable, SalesTable[CustomerID])) = 1, "New", "Existing")
+This DAX formula determines whether a customer is “New” or “Existing” based on their purchasing behavior:
+- New Customer: The customer has only placed one order.
+- Existing Customer: The customer has placed more than one order.
+
+For RFM analysis, here are the DAXs created:
+- Recency value: Recency value = DATEDIFF([Last Transaction Date],DATE(2014,7,1),DAY)
+=> Meaning: The recency value calculates the number of days since the customer’s last transaction until July 1, 2014. A smaller value indicates that a customer’s last purchase was more recent, which often correlates with a greater likelihood to engage again.
+- Frequency value: Frequency value = DISTINCTCOUNT(SalesOrder[SalesOrderID])
+  => Meaning: The frequency value represents the total number of unique sales orders placed by a customer. A higher frequency indicates that the customer regularly engages in transactions with the business.
+- Monetary value: Monetary value = 
+VAR TotalQuantity = SUM(SalesTable[OrderQty])
+RETURN
+DIVIDE([Total Sales],TotalQuantity,0)
+=> Meaning: The monetary value calculates the average sales revenue per item sold. A higher average indicates that customers are spending more on their purchases, which is a key metric for understanding customer value.
+
+- R Score: R Score = 
+SWITCH(
+    TRUE(),
+        [Recency value] <= PERCENTILE.INC('RFM table'[R Value],0.20),"5",
+        [Recency value] <= PERCENTILE.INC('RFM table'[R Value],0.40),"4",
+        [Recency value] <= PERCENTILE.INC('RFM table'[R Value],0.60),"3",
+        [Recency value] <= PERCENTILE.INC('RFM table'[R Value],0.80),"2",
+        "1"
+)
+=> Logic:
+  - A lower recency value (meaning a more recent purchase) will score higher.
+  - If a customer’s recency value is less than or equal to the 20th percentile of recency values, they receive a score of 5 (most recent).
+  - If it falls within the 40th percentile, they get a score of 4, and so on, until a score of 1 for those in the highest recency percentile (least recent).
+Meaning: The R Score ranks customers based on how recently they made their last purchase, with a higher score indicating more recent activity.
+- F Score: F Score = 
+SWITCH(
+    TRUE(),
+        [Frequency value] <= PERCENTILE.INC('RFM table'[F Value],0.20),"1",
+        [Frequency value] <= PERCENTILE.INC('RFM table'[F Value],0.40),"2",
+        [Frequency value] <= PERCENTILE.INC('RFM table'[F Value],0.60),"3",
+        [Frequency value] <= PERCENTILE.INC('RFM table'[F Value],0.80),"4",
+        "5"
+)
+=> Logic:
+  - If a customer’s frequency value is less than or equal to the 20th percentile of frequency values, they receive a score of 1 (least frequent).
+  - If it’s within the 40th percentile, they get a score of 2, and so on, until a score of 5 for those in the highest frequency percentile (most frequent).
+Meaning: The F Score ranks customers based on how frequently they purchase, with a lower score indicating lower frequency and a higher score indicating that the customer purchases regularly.
+- M Score: M Score = 
+SWITCH(
+    TRUE(),
+        [Monetary value] <= PERCENTILE.INC('RFM table'[M Value],0.20),"1",
+        [Monetary value] <= PERCENTILE.INC('RFM table'[M Value],0.40),"2",
+        [Monetary value] <= PERCENTILE.INC('RFM table'[M Value],0.60),"3",
+        [Monetary value] <= PERCENTILE.INC('RFM table'[M Value],0.80),"4",
+        "5"
+)
+=> Logic:
+  - A monetary value less than or equal to the 20th percentile will receive a score of 1 (lowest spend).
+  - The score increases to 5 for customers in the highest monetary percentile (highest spend).
+Meaning: The M Score ranks customers based on the total amount of money they have spent, with a lower score indicating lower spending and a higher score indicating that the customer is a significant contributor to revenue.
+- A table of Segment Score would be used to segment the customers after granting them scores. View it [here](url)
+This step allows us to conduct segmenting customers with ease.
