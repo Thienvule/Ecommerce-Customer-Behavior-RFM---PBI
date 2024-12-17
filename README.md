@@ -73,8 +73,8 @@ Develop an Interactive Dashboard to visualize RFM segments alongside sales data,
 
 
 
-### Interactive Dashboard and Pre-Insights
-#### Overview
+## Interactive Dashboard and Pre-Insights
+### Overview of findings
 Sales Trend Analysis
 ![image](https://github.com/user-attachments/assets/aa6ba055-b30d-4cad-8fac-85039188f875)
 - This tab can help stakeholders understand what is going on with the Northstar metrics and relevant metrics using different dimensions, immediately granting insights of the how different customer segments or product categories are performing.
@@ -83,10 +83,33 @@ Map Sales
 
 - This sheet can help stakeholders know how different territories are doing.
 
-Symptom Overview
-My first insights are covered here, serving  as a headstart for further discussion and investigation. 
 
-![image](https://github.com/user-attachments/assets/943de9ba-191c-478e-a385-ec1072db5ccc)
+#### Symptom
+
+- Overall Sales Decrease in 2014 (24%): Indicates a need for a detailed investigation to determine underlying causes.
+- Increased Customer Base, Lower Average Order Value (AOV): Despite having more customers, the decline in AOV suggests possible pricing issues or changes in product mix.
+
+Segment Analysis
+Increased Sales:
+- About to Sleep: Identify strategies that effectively re-engage these customers; analyze successful touchpoints.
+- Champions / Loyal: Review and reinforce successful engagement and retention strategies that are keeping these segments engaged.
+- Need Attention: Evaluate current strategies' effectiveness in engaging these customers and plan adjustments if necessary.
+
+Sales Decrease:
+- At Risk: Assess churn risks and develop targeted retention strategies.
+- Cannot Lose Them / Potential Loyalist: Identify what makes these customers leave us and design specialized retention and loyalty programs.
+
+- No Change:
+- Hibernating / Lost Customer: Analyze the reasons for stagnation or decline; create reactivation campaigns tailored to these segments.
+- New Customers / Promising: Continue successful onboarding and engagement strategies to encourage progression along the customer lifecycle.
+
+Product Analysis
+- Components & Clothing: Conduct an in-depth analysis to identify trends or issues affecting sales; explore areas like market demand, competition, or internal product issues.
+
+Geo Analysis
+- Decreasing sales: Why do sales in these regions decreased significantly (South West, Canada, Central, South East, North East)
+
+But first, let's deep dive into other dimensions. 
 
 #### YOY Analysis 
 These 3 tabs allow stakeholders to dive deeper to the metrics, signaling issues in AOV.
@@ -100,7 +123,10 @@ YOY AOV
 ![image](https://github.com/user-attachments/assets/006672bd-e0e1-487a-a640-b85b4136d386)
 
 YOY Insights
-![image](https://github.com/user-attachments/assets/870605f2-5019-43b6-844c-43b2947082d9)
+Overall sales are on the rise, with a remarkable 300% increase in total orders, indicating positive momentum. However, there is a concerning significant decline in Average Order Value (AOV) across all segments.
+A large share of the order increase is driven by new and promising customers, while orders from our top segments are decreasing.
+Now, let's examine the profile of our customers.
+
 
 #### Segment Analysis
 Map_Segment: Allow stakeholders to intepret where our customers are and what is happening to them
@@ -115,21 +141,45 @@ This tab helps stakeholders to analyze segments in a much deeper granularity to 
 ![image](https://github.com/user-attachments/assets/516f46d4-b64c-4179-8ace-f1f667762bb7)
 
 Segment Insights
-My insights summary regarding segments
-![image](https://github.com/user-attachments/assets/eeec3aa5-6318-4f87-beb2-7014e405d642)
+1. Customer Lifetime Value: Customer Lifetime Value: To enhance sales, it’s optimal to allocate our resources towards the Champions, Potential Loyalists, Can't Lose Them, At Risk, and Loyal segments.
+2. At Risk
+Observation: An increasing number of customers are becoming at risk, as reflected by declining sales, which signals potential disengagement.
+3. Cannot Lose Them
+Observation: This segment is experiencing a significant decrease.
+Action Needed: Determine whether these customers have transitioned to higher segments or if we have lost them entirely.
+4. Potential Loyalist: There are more customers and an increase in orders, but the Average Order Value (AOV) is significantly lower.
+5. Concern for Manufacturers
+Observation: Customers in the At Risk and Cannot Lose Them segments are particularly attentive to issues related to manufacturers.
+Action Needed: Investigate any potential problems with our manufacturers that could be affecting customer loyalty.
+6. Price Sensitivity in Other Segments
+Observation: Other segments are influenced by pricing and promotions.
+Action Needed: For each segment experiencing a sales decline, analyze the reasons behind their decreased purchasing behavior.
 
 #### Product Analysis
 Product Details: This helps to understand why each type of customer buy our product, leading to better product improvements.
 ![image](https://github.com/user-attachments/assets/73874738-5d0e-4eca-a57c-3e128299f1bd)
 
 Product Insights
-My insights summary regarding how to approach products improvement
-![image](https://github.com/user-attachments/assets/7e4bc7b7-c628-4d70-a47d-250b64b978b1)
+- At Risk: Investigate the quality and manufacturer of top products to identify any potential issues.
+- Potential Loyalists: Develop better upselling strategies for the products frequently purchased by this segment.
+- Cannot Lose Them: In addition to assessing pricing, evaluate promotions, manufacturer reputation, product quality, and customer reviews to pinpoint any underlying issues.
+
 
 #### Recommendation Summary
-This tab includes my recommended next steps to be conducted, serving as the foundation for further investigation and decision making.
-![image](https://github.com/user-attachments/assets/46bc91e6-b1e8-47a9-99b7-615dd140b545)
+- Address Lower Average Order Value (AOV): A declining AOV despite increased customer numbers indicates potential pricing issues that need correction to maximize revenue.
+- Implement Targeted Re-Engagement Campaigns for “About to Sleep” Customers: Re-engaging customers who are showing signs of activity can convert them back into regular purchasers, driving sales.
+- Enhance and Personalize Loyalty Programs for Champions: Retaining loyal customers is often more cost-effective than acquiring new ones. Personalized rewards improve customer stickiness.
+- Develop Targeted Retention Initiatives for At Risk Customers: Proactively addressing the needs of at-risk customers can reduce churn and maintain revenue streams, starting from investigating the manufacturers and product quality.
+- Conduct Exit Surveys for Cannot Lose Them Customers: Understanding why these valued customers haven't come back in 2014 is crucial for creating targeted strategies to win them back.
+- Launch Reactivation Campaigns for Hibernating/Lost Customers: Reactivating disengaged customers can yield quick revenue gains by re-establishing previous relationships.
+- Continue Onboarding New Customers: Smooth and engaging onboarding increases the likelihood that new customers will become repeat buyers, enhancing long-term value. It seems like we are doing a great job (a great surge in total order coming from New and Promising customers)
+- Conduct Market Analysis for Components & Clothing: Identifying trends or shifts in consumer preferences can help adapt product offerings to better meet market demand.
+- Investigate Causes of Decreased Sales in Specific Regions: Localized issues may require tailored strategies, ensuring marketing efforts align with regional customer needs.
+- Assess Product Quality and Manufacturer Reliability: Poor product quality or unreliable suppliers can lead to customer dissatisfaction, impacting loyalty and sales.
+- Enhance Pricing and Promotion Strategies: Understanding price sensitivity in various segments allows for more effective pricing strategies that can boost sales.
+- Develop Upselling Tactics for Potential Loyalists: Improving upselling effectiveness helps increase AOV, contributing to greater overall profitability.
 
+Note: As AOV is the problem, the coming strategies should facilitate boosting AOV, such as better upselling tactics. 
 After utilizing this interactive dashboard, stakeholders will gain insights into why the surge in customers isn’t reflected in sales, allowing them to adjust their current approach and achieve better results.
 
 ## Technical preparation
