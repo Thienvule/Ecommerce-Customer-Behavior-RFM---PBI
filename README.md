@@ -3,20 +3,22 @@
 ## Project Overview: 
 As a data analyst, I was tasked with investigating why Adventure Works, a bicycle manufacturer, was experiencing stagnant sales despite a significant increase in customers. In this project, I'll walk you through my analysis applying a human centric concept called Design Thinking, from data preparation to insights, and reveal the surprising reasons behind this paradox.
 
-## Introduction
+### Background
 During a monthly review at Adventure Works, the sales team was filled with optimism as they celebrated a significant increase in new customers. However, the mood shifted when the sales manager posed a critical question: “Why aren’t our sales figures reflecting this growth?”
 
 Determined to uncover the truth behind this paradox, I initiated an analysis to explore customer behavior, purchasing patterns, and sales trends. My goal was to determine why Adventure Works, despite its expanding customer base, was experiencing stagnant sales and to provide actionable insights to turn the tide.
 
-### Content
-1. The Story:
-Design Thinking Process: From empathizing with stakeholders to defining the problem, ideating solutions, and finalizing an interactive dashboard that reveals key insights.
-2. Methodology and Techniques:
-- Dataset Preparation: Overview of the steps taken to clean and preprocess the dataset for analysis.
-- Tools and Techniques: A summary of the analytical tools and methods applied throughout the project.
+### Insights and recommendations are provided on the following key areas:
+- Design Thinking Process: Implement a comprehensive Design Thinking approach that begins with empathetic engagement with stakeholders to understand their needs and perspectives. Clearly define the core problem, brainstorm innovative solutions, and ultimately develop an interactive dashboard that effectively highlights critical insights and actionable items for stakeholders.
+- Sales Trend Analysis: Conduct an in-depth evaluation of historical sales trends, focusing on key performance metrics including total sales volume, total number of orders, and average order value (AOV). This analysis should aim to identify patterns, anomalies, and opportunities for growth based on historical data.
+- RFM Analysis: Employ RFM (Recency, Frequency, Monetary) segmentation to gain deeper insights into customer behaviors. This approach will enable the formulation of targeted strategies to prioritize high-value customer segments while developing plans to engage and convert lower-value segments. Additionally, this analysis will address the paradox of increased customer acquisition alongside stagnant sales figures.
+- Product Level Performance: Execute a detailed analysis of Adventure Work's diverse product lines to assess their individual contributions to overall sales performance. This examination will help identify which products resonate most with specific customer segments, facilitating better-targeted marketing and inventory decisions.
 
-## The story
-Concept review - Design Thinking: tbu
+Note: The technical part of the project will be comprised in another file called: "For technical read"
+
+
+
+## Design Thinking Process
 
 ### Stage 1: Empathizing
 When the sales manager approached me with her question, I realized that to address her concerns effectively, I needed to see things from her perspective. Therefore, I focused on the empathy stage.
@@ -53,14 +55,6 @@ Understand the needs of Adventure Works' sales manager by asking key questions:
 - Pain Points: Increased efforts in marketing and competitive pricing have not resulted in expected sales growth.
 - Gains from Solving This Problem: Ability to engage customers more effectively, leading to improved sales performance. 
 
-#### Dataset: Adventure Work (2011-2014) - [View here]([url](https://drive.google.com/drive/folders/1tKHXBDJFJWSYx7tq4gI3_pZoKjfgGr9c?usp=sharing))
-Tables Overview:
-- Calendar
-- Customers
-- Categories
-- Subcategories
-- Products
-Data quality: Cleaned
 
 ### 2. Stage 2: Define Problem
 Define Northstar metric, relevant dimensions, and metrics.
@@ -79,7 +73,7 @@ Develop a customer-centric approach to uncover the underlying reasons for stagna
 ### Stage 4: Prototype
 Develop an Interactive Dashboard to visualize RFM segments alongside sales data, helping stakeholders explore customer contributions to sales. Refine it based on user feedback for clarity and impact.
 
-## The techniques
+## Technical preparation
 ### Data Preparation with Power Query (ETL)
 - Extract: Import data from various sources, such as sales records, customer databases, and product data. 
 - Transform: Clean and preprocess the data by removing duplicates, handling missing values, and applying necessary transformations to ensure data accuracy. 
