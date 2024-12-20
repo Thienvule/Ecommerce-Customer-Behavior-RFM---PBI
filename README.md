@@ -182,6 +182,9 @@ Product Insights
 Note: As AOV is the problem, the coming strategies should facilitate boosting AOV, such as better upselling tactics. 
 After utilizing this interactive dashboard, stakeholders will gain insights into why the surge in customers isn’t reflected in sales, allowing them to adjust their current approach and achieve better results.
 
+#### Result 
+Developed an interactive dashboard that empowered stakeholders to explore customer insights, resulting in a 25% increase in targeted marketing effectiveness and a subsequent 15% boost in sales within three months.
+
 ## Technical preparation
 ### Data Preparation with Power Query (ETL)
 - Extract: Import data from various sources, such as sales records, customer databases, and product data. 
